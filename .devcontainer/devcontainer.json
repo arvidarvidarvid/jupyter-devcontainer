@@ -1,0 +1,65 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.217.4/containers/python-3
+{
+	"name": "Jupyter Devcontainer",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	"mounts": [],
+	"containerEnv": {
+		"PORT": "8000"
+	},
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"python.defaultInterpreterPath": "/usr/local/bin/python3",
+		"python.analysis.typeCheckingMode": "basic",
+		"emmet.triggerExpansionOnTab": true,
+		"[sql]": {
+			"editor.tabSize": 2
+		},
+		"[html]": {
+			"editor.tabSize": 2
+		},
+		"[javascript]": {
+			"editor.tabSize": 2
+		},
+		"[python]": {
+			"editor.tabSize": 4,
+			"editor.rulers": [
+				119
+			]
+		},
+		"python.linting.pylintArgs": [
+			"--disable",
+			"C0114,C0115,C0116",
+			"--max-line-length",
+			"120"
+		],
+		"python.formatting.provider": "black",
+		"editor.formatOnSave": true,
+		"python.languageServer": "Default",
+		"python.formatting.blackArgs": [
+			"--line-length",
+			"120"
+		],
+		"terminal.integrated.defaultProfile.linux": "bash",
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "/bin/bash"
+			}
+		},
+		// Add the IDs of extensions you want installed when the container is created.
+		"extensions": [
+			"jkiviluoto.tws", // Trailing whitespace highlight and removal
+			"eamodio.gitlens",
+			"ms-python.python",
+			"ms-toolsai.jupyter",
+			"jithurjacob.nbpreviewer",
+			"emeraldwalk.runonsave"
+		],
+		// Use 'forwardPorts' to make a list of ports inside the container available locally.
+		"forwardPorts": [
+			8000
+		]
+	}
+}

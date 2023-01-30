@@ -1,0 +1,6 @@
+# General purpose libraries
+requests>=2.27.0
+
+# Jupyter notebooks
+ipython>=8.6.0
+notebook>=6.5.0
