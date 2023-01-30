@@ -22,7 +22,9 @@ WORKDIR $APP_HOME
 # Removes output stream buffering, allowing for more efficient logging
 ENV PYTHONUNBUFFERED 1
 ENV GRPC_POLL_STRATEGY=epoll1
-RUN apt-get update && apt-get install --fix-broken gcc redis-server supervisor libffi-dev libssl-dev python3-dev -y
+RUN apt-get update && apt-get install --fix-broken gcc redis-server supervisor libffi-dev libssl-dev python3-dev g++ -y
+
+
 
 # Install dependencies
 COPY requirements.txt .
